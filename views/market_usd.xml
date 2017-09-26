@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+    <record id="seq_type_market_usd" model="ir.sequence">
+      <field name="name">MU REG</field>
+      <field name="code">reg_code_mu</field>
+    </record>
+
+    <record id="seq_market_usd" model="ir.sequence">
+      <field name="name">reg</field>
+      <field name="code">reg_code_mu</field>
+      <field name="prefix">MU</field>
+      <field name="padding">4</field>
+    </record>
+    <record model="ir.ui.view" id="market_usd_form_view">
+      <field name="name">market.usd.form</field>
+      <field name="model">market.usd</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="4">
+            <group col="2">
+              <field digits="(2, 4)" name="exchange_rate" string="Tipo de cambio"/>
+              <field name="date" string="Fecha"/>
+            </group>
+            <group>
+              <button name="banxico" type="object" string="Obtener" class="oe_highlight"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="market_usd_tree_view">
+      <field name="name">market.usd.tree</field>
+      <field name="model">market.usd</field>
+      <field name="arch" type="xml">
+        <tree string="Exchange rate Internal Tree" default_order="date desc">
+          <field name="date" string="Fecha"/>
+          <field digits="(2, 4)" name="exchange_rate" string="Tipo de cambio"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="market_usd_list_action">
+      <field name="name">Market usd</field>
+      <field name="res_model">market.usd</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create the first exchange rate</p>
+      </field>
+    </record>
+
+    <menuitem id="menu_action_market_usd_form" name="Tipo de cambio" parent="menu_group_market" sequence="77" action="market_usd_list_action"/>
+  </data>
+</odoo>

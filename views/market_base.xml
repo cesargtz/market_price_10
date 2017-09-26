@@ -1,0 +1,54 @@
+<openerp>
+  <data>
+    <record id="seq_type_market_base" model="ir.sequence">
+      <field name="name">MB REG</field>
+      <field name="code">reg_code_mb</field>
+    </record>
+
+    <record id="seq_market_base" model="ir.sequence">
+      <field name="name">reg</field>
+      <field name="code">reg_code_mb</field>
+      <field name="prefix">MB</field>
+      <field name="padding">3</field>
+    </record>
+
+    <record model="ir.ui.view" id="market_base_form_view">
+      <field name="name">market.base.form</field>
+      <field name="model">market.base</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="4">
+            <group col="2">
+              <field name="season" digits="(2, 4)"/>
+              <field name="base"/>
+              <field name="url_price_corn"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="market_base_tree_view">
+      <field name="name">market.base.tree</field>
+      <field name="model">market.base</field>
+      <field name="arch" type="xml">
+        <tree string="Truck Internal Tree">
+          <field name="season" digits="(2, 4)"/>
+          <field name="base"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="market_base_list_action">
+      <field name="name">Market base</field>
+      <field name="res_model">market.base</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create the first base</p>
+      </field>
+    </record>
+
+    <menuitem id="menu_action_market_base_form" name="Bases" parent="menu_group_market" sequence="78" action="market_base_list_action"/>
+  </data>
+</openerp>

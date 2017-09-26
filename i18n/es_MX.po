@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* market_price
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-25 16:03+0000\n"
+"PO-Revision-Date: 2017-08-25 10:09-0600\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: market_price
+#: model:ir.actions.act_window,help:market_price.market_base_list_action
+msgid ""
+"<p class=\"oe_view_nocontent_create\">Create the first base</p>\n"
+"      "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">Create the first base</p>\n"
+"      "
+
+#. module: market_price
+#: model:ir.actions.act_window,help:market_price.market_usd_list_action
+msgid ""
+"<p class=\"oe_view_nocontent_create\">Create the first exchange rate</p>\n"
+"      "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">Create the first exchange rate</p>\n"
+"      "
+
+#. module: market_price
+#: model:ir.actions.act_window,help:market_price.market_price_list_action
+msgid ""
+"<p class=\"oe_view_nocontent_create\">Create the first market price</p>\n"
+"                "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">Create the first market price</p>\n"
+"                "
+
+#. module: market_price
+#: field:market.base,base:0
+msgid "Base"
+msgstr "Base"
+
+#. module: market_price
+#: model:ir.ui.menu,name:market_price.menu_action_market_base_form
+msgid "Bases"
+msgstr "Bases"
+
+#. module: market_price
+#: model:res.groups,name:market_price.access_market
+msgid "Compras / mercado"
+msgstr "Compras / mercado"
+
+#. module: market_price
+#: field:market.base,create_uid:0 field:market.price,create_uid:0
+#: field:market.usd,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: market_price
+#: field:market.base,create_date:0 field:market.price,create_date:0
+#: field:market.usd,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: market_price
+#: help:market.base,base:0
+msgid "Currency USD"
+msgstr "Moneda USD"
+
+#. module: market_price
+#: field:market.price,date:0 field:market.usd,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: market_price
+#: field:market.base,display_name:0 field:market.price,display_name:0
+#: field:market.usd,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: market_price
+#: field:market.usd,exchange_rate:0
+msgid "Exchange rate"
+msgstr "Tips de Cambio"
+
+#. module: market_price
+#: view:market.price:market_price.market_price_form_view
+#: view:market.price:market_price.market_price_tree_view
+#: view:market.usd:market_price.market_usd_form_view
+#: view:market.usd:market_price.market_usd_tree_view
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: market_price
+#: view:market.price:market_price.market_price_form_view
+#: view:market.price:market_price.market_price_tree_view
+msgid "Hora"
+msgstr "Hora"
+
+#. module: market_price
+#: field:market.price,hour_create:0
+msgid "Hour create"
+msgstr "Hour create"
+
+#. module: market_price
+#: field:market.base,id:0 field:market.price,id:0 field:market.usd,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: market_price
+#: field:market.base,__last_update:0 field:market.price,__last_update:0
+#: field:market.usd,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: market_price
+#: field:market.base,write_uid:0 field:market.price,write_uid:0
+#: field:market.usd,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: market_price
+#: field:market.base,write_date:0 field:market.price,write_date:0
+#: field:market.usd,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: market_price
+#: model:ir.actions.act_window,name:market_price.market_price_list_action
+msgid "Market Price"
+msgstr "Market Price"
+
+#. module: market_price
+#: model:ir.actions.act_window,name:market_price.market_base_list_action
+msgid "Market base"
+msgstr "Market base"
+
+#. module: market_price
+#: model:ir.actions.act_window,name:market_price.market_usd_list_action
+msgid "Market usd"
+msgstr "Market usd"
+
+#. module: market_price
+#: model:ir.ui.menu,name:market_price.menu_group_market
+msgid "Mercado"
+msgstr "Mercado"
+
+#. module: market_price
+#: field:market.base,name:0 field:market.price,name:0 field:market.usd,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: market_price
+#: view:market.usd:market_price.market_usd_form_view
+msgid "Obtener"
+msgstr "Obtener"
+
+#. module: market_price
+#: view:market.price:market_price.market_price_form_view
+msgid "Obtener Precio"
+msgstr "Obtener Precio"
+
+#. module: market_price
+#: view:market.price:market_price.market_price_form_view
+#: view:market.price:market_price.market_price_tree_view
+msgid "Precio por Tonelada (USD)"
+msgstr "Precio por Tonelada (USD)"
+
+#. module: market_price
+#: view:market.price:market_price.market_price_form_view
+#: view:market.price:market_price.market_price_tree_view
+msgid "Precio por Toneladas (MX)"
+msgstr "Precio por Toneladas (MX)"
+
+#. module: market_price
+#: model:ir.ui.menu,name:market_price.menu_action_market_price_form
+msgid "Precios"
+msgstr "Precios"
+
+#. module: market_price
+#: field:market.price,price_mx:0
+msgid "Price mx"
+msgstr "Precio por Toneladas (MX)"
+
+#. module: market_price
+#: field:market.price,price_ton:0
+msgid "Price ton"
+msgstr "Precio por Tonelada (USD)"
+
+#. module: market_price
+#: field:market.base,season:0
+msgid "Season"
+msgstr "Temporada"
+
+#. module: market_price
+#: sql_constraint:market.usd:0
+msgid "Solo se permite un tipo de cambio por dia"
+msgstr "Solo se permite un tipo de cambio por dia"
+
+#. module: market_price
+#: help:market.base,url_price_corn:0
+msgid "This url is from de page www.quandl.com that correspond to web service"
+msgstr "La URL proven del sitio web www.quandl.com, aquí se toman el Servicio web para actualizar el precio."
+
+#. module: market_price
+#: model:ir.ui.menu,name:market_price.menu_action_market_usd_form
+#: view:market.usd:market_price.market_usd_form_view
+#: view:market.usd:market_price.market_usd_tree_view
+msgid "Tipo de cambio"
+msgstr "Tipo de cambio"
+
+#. module: market_price
+#: field:market.base,url_price_corn:0
+msgid "Url price corn"
+msgstr "Url API"
