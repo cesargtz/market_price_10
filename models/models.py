@@ -20,7 +20,7 @@ class market_price(models.Model):
     @api.one
     @api.depends('price_ton', 'date')
     def _compute_mx(self):
-        if self.date:            
+        if self.date:
             self.usd = self.env['market.usd'].search(
                 [("date", "=", self.date)], limit=1)
             self.price_mx = self.price_ton * self.usd.exchange_rate
@@ -42,7 +42,7 @@ class market_price(models.Model):
         utc_hr = local_hr.astimezone(pytz.utc)
         self.hour_create = utc_hr.strftime("%Y-%m-%d %I:%M %Z%z")[10:16]
 
-  
+
     @api.multi
     def quandl(self):
         base = self.env['market.base'].search([], order='id DESC', limit=1)
@@ -130,10 +130,12 @@ class market_price_base(models.Model):
 
     _defaults = {'name': lambda obj, cr, uid, context: obj.pool.get(
         'ir.sequence').get(cr, uid, 'reg_code_mb'), }
-                    
+
     name = fields.Char()
 
     season = fields.Char(required=True)
-    base = fields.Integer(required=True, help="Currency USD")
+    base = fields.Float(required=True, help="Currency USD")
+    cost = fields.Float()
+    price_min = fields.Float()
     url_price_corn = fields.Char(
         required=True, help="This url is from de page www.quandl.com that correspond to web service")

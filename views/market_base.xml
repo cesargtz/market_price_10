@@ -20,7 +20,9 @@
           <group col="4">
             <group col="2">
               <field name="season" digits="(2, 4)"/>
+              <field name="price_min"/>
               <field name="base"/>
+              <field name="cost"/>
               <field name="url_price_corn"/>
             </group>
           </group>
@@ -34,7 +36,9 @@
       <field name="arch" type="xml">
         <tree string="Truck Internal Tree">
           <field name="season" digits="(2, 4)"/>
+            <field name="price_min"/>
           <field name="base"/>
+          <field name="cost"/>
         </tree>
       </field>
     </record>
