@@ -116,6 +116,12 @@ class market_price_usd(models.Model):
                                 'date': date,
                                 'exchange_rate': float(title[4:11])
         })
+        self.env['res.currency.rate'].create({
+                                'name': date,
+                                'rate': 1 / float(title[4:11]),
+                                'currency_id': 3,
+                                'company_id': 1
+        })
         # _logger.info("ok")
 
     _sql_constraints = [
