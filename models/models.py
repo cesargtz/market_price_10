@@ -8,7 +8,7 @@ import requests
 import limit
 
 _logger = logging.getLogger(__name__)
-#  _logger.erro()
+#  _logger.error()
 
 
 class market_price(models.Model):
@@ -108,21 +108,22 @@ class market_price_usd(models.Model):
     @api.model
     def banxico_auto(self):
         date = datetime.date.today()
+        date_time = datetime.datetime.now()
         rss_url = "http://www.banxico.org.mx/rsscb/rss?BMXC_canal=fix&BMXC_idioma=es"
         feeds = feedparser.parse(rss_url)
         for feed in feeds["items"]:
             title = feed["title"]
-        self.env['market.usd'].create({
-                                'date': date,
-                                'exchange_rate': float(title[4:11])
-        })
         self.env['res.currency.rate'].create({
-                                'name': date,
+                                'name': date_time,
                                 'rate': 1 / float(title[4:11]),
                                 'currency_id': 3,
                                 'company_id': 1
         })
-        # _logger.info("ok")
+        self.env['market.usd'].create({
+                                'date': date,
+                                'exchange_rate': float(title[4:11])
+        })
+
 
     _sql_constraints = [
         ('date_unique',
