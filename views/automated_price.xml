@@ -22,5 +22,17 @@
             <field eval="'market.usd'" name="model"/>
             <field eval="'banxico_auto'" name="function"/>
         </record>
+
+        <record id="ir_cron_price_usd_pay_action" model="ir.cron">
+          <field name="name">exchange rate payments</field>
+          <field name="user_id" ref="base.user_root"/>
+          <field name="interval_number">1</field>
+          <field name="interval_type">days</field>
+          <field name="numbercall">-1</field>
+          <field eval="False" name="doall"/>
+          <field eval="'market.usd'" name="model"/>
+          <field eval="'banxico_pagos_auto'" name="function"/>
+      </record>
+      
    </data>
 </odoo>

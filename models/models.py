@@ -108,17 +108,10 @@ class market_price_usd(models.Model):
     @api.model
     def banxico_auto(self):
         date = datetime.date.today()
-        date_time = datetime.datetime.now()
         rss_url = "http://www.banxico.org.mx/rsscb/rss?BMXC_canal=fix&BMXC_idioma=es"
         feeds = feedparser.parse(rss_url)
         for feed in feeds["items"]:
             title = feed["title"]
-        self.env['res.currency.rate'].create({
-                                'name': date_time,
-                                'rate': 1 / float(title[4:11]),
-                                'currency_id': 3,
-                                'company_id': 1
-        })
         self.env['market.usd'].create({
                                 'date': date,
                                 'exchange_rate': float(title[4:11])
@@ -130,6 +123,21 @@ class market_price_usd(models.Model):
         'UNIQUE(date)',
         "Solo se permite un tipo de cambio por dia"),
     ]
+
+
+    @api.model
+    def banxico_pagos_auto(self):
+        date_time = datetime.datetime.now()
+        rss_url = "http://www.banxico.org.mx/rsscb/rss?BMXC_canal=pagos&BMXC_idioma=es"
+        feeds = feedparser.parse(rss_url)
+        for feed in feeds["items"]:
+            title = feed["title"]
+        self.env['res.currency.rate'].create({
+                                'name': date_time,
+                                'rate': 1 / float(title[4:11]),
+                                'currency_id': 3,
+                                'company_id': 1
+        })
 
 
 class market_price_base(models.Model):
