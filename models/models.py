@@ -155,3 +155,15 @@ class market_price_base(models.Model):
     price_min = fields.Float()
     url_price_corn = fields.Char(
         required=True, help="This url is from de page www.quandl.com that correspond to web service")
+
+
+class market_price_base(models.Model):
+    _name = 'market.free'
+
+    _defaults = {'name': lambda obj, cr, uid, context: obj.pool.get(
+        'ir.sequence').get(cr, uid, 'reg_code_mf'), }
+
+    name = fields.Char()
+
+    price = fields.Float(string="Precio Libre Tonelada (USD)")
+    date = fields.Date(required=True, default=fields.Date.today)

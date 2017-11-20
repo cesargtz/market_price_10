@@ -26,8 +26,9 @@
         'views/market_price.xml',
         'views/market_usd.xml',
         'views/market_base.xml',
+        'views/market_free.xml',
         'views/automated_price.xml',
-        
+
         #'templates.xml',
     ],
 

@@ -58,8 +58,8 @@
             <menuitem
                 id="menu_group_market"
                 name="Mercado"
-                parent="purchase.menu_product_in_config_purchase"
-                sequence="70"/>
+                parent="purchase.menu_purchase_control"
+                sequence="50"/>
             <menuitem
                 id="menu_action_market_price_form"
                 name="Precios"
