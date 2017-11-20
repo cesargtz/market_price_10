@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_market_price,market_price user,model_market_price,market_price.access_market,1,1,1,1
 access_market_usd,market_usd,model_market_usd,market_price.access_market,1,1,1,1
 access_market_base,market_base,model_market_base,market_price.access_market,1,1,1,1
+access_market_free,market_free,model_market_free,market_price.access_market,1,1,1,1
