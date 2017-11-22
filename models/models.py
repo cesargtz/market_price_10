@@ -29,7 +29,8 @@ class market_price(models.Model):
     name = fields.Char()
     date = fields.Date(required=True, default=fields.Date.today)
     price_ton = fields.Float(required=True)
-    price_mx = fields.Float(compute="_compute_mx", store=True)
+    # compute="_compute_mx", store=True, esto va en priceMX
+    price_mx = fields.Float()
     hour_create = fields.Char(compute="_compute_hour", store=True)
 
     @api.one
