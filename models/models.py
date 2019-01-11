@@ -140,6 +140,12 @@ class market_price_usd(models.Model):
                                 'currency_id': 3,
                                 'company_id': 1
         })
+        self.env['res.currency.rate'].create({
+                        'name': time,
+                        'rate': 1 / float(title[4:11]),
+                        'currency_id': 3,
+                        'company_id': 3
+        })
 
 
 class market_price_base(models.Model):
