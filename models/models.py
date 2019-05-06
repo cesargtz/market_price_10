@@ -134,8 +134,7 @@ class market_price_usd(models.Model):
         feeds = feedparser.parse(rss_url)
         for feed in feeds["items"]:
             title = feed["title"]
-        # time = date_time + datetime.timedelta(days=1)
-        time = date_time
+        time = date_time + datetime.timedelta(days=1)
         self.env['res.currency.rate'].create({
                                 'name': time,
                                 'rate': 1 / float(title[4:11]),
