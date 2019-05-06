@@ -128,12 +128,14 @@ class market_price_usd(models.Model):
 
     @api.model
     def banxico_pagos_auto(self):
-        date_time = datetime.datetime.now()
+        now = datetime.datetime.now()
+        date_time = datetime.datetime(now.year, now.month, now.day,6,0)
         rss_url = "http://www.banxico.org.mx/rsscb/rss?BMXC_canal=fix&BMXC_idioma=es"
         feeds = feedparser.parse(rss_url)
         for feed in feeds["items"]:
             title = feed["title"]
-        time = date_time + datetime.timedelta(days=1)
+        # time = date_time + datetime.timedelta(days=1)
+        time = date_time
         self.env['res.currency.rate'].create({
                                 'name': time,
                                 'rate': 1 / float(title[4:11]),
