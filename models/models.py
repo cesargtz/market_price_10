@@ -17,7 +17,6 @@ class market_price(models.Model):
     _defaults = {'name': lambda obj, cr, uid, context: obj.pool.get(
          'ir.sequence').get(cr, uid, 'reg_code_mp'), }
 
-    @api.one
     @api.depends('price_ton', 'date')
     def _compute_mx(self):
         if self.date:
@@ -33,7 +32,6 @@ class market_price(models.Model):
     price_mx = fields.Float()
     hour_create = fields.Char(compute="_compute_hour", store=True)
 
-    @api.one
     @api.depends('price_ton', 'date')
     def _compute_hour(self):
         local = pytz.timezone("America/Chihuahua")
@@ -44,7 +42,6 @@ class market_price(models.Model):
         self.hour_create = utc_hr.strftime("%Y-%m-%d %I:%M %Z%z")[10:16]
 
 
-    @api.multi
     def quandl(self):
         base = self.env['market.base'].search([], order='id DESC', limit=1)
         resp = requests.get(base['url_price_corn'])
@@ -98,7 +95,6 @@ class market_price_usd(models.Model):
     date = fields.Date(required=True, default=fields.Date.today)
     exchange_rate = fields.Float()
 
-    @api.one
     def banxico(self):
         rss_url = "http://www.banxico.org.mx/rsscb/rss?BMXC_canal=fix&BMXC_idioma=es"
         feeds = feedparser.parse(rss_url)

@@ -7,12 +7,8 @@
         adds the price of the corn with the current value of the market
     """,
 
-    'author': "Yecora",
-    'website': "yecora.mx",
+    'author': "pelek",
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
-    # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
 

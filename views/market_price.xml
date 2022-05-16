@@ -24,7 +24,7 @@
                   </group>
                     <group col="4">
                         <field name="price_ton" string="Precio por Tonelada (USD)"/>
-                        <field name="price_mx" string="Precio por Toneladas (MX)" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                        <field name="price_mx" string="Precio por Toneladas (MX)" widget="monetary"/>
                         <field name="date" string="Fecha"/>
                         <field name="hour_create" string="Hora"/>
                     </group>
@@ -48,7 +48,6 @@
             <record model="ir.actions.act_window" id="market_price_list_action">
                 <field name="name">Market Price</field>
                 <field name="res_model">market.price</field>
-                <field name="view_type">form</field>
                 <field name="view_mode">tree,form</field>
                 <field name="help" type="html">
                     <p class="oe_view_nocontent_create">Create the first market price</p>
@@ -58,7 +57,7 @@
             <menuitem
                 id="menu_group_market"
                 name="Mercado"
-                parent="purchase.menu_purchase_control"
+                parent="purchase.menu_purchase_config"
                 sequence="50"/>
             <menuitem
                 id="menu_action_market_price_form"
